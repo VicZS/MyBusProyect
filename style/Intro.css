@@ -13,7 +13,9 @@ body{
 .formulario_inicio h4{
     color: white;
 }
-
+.h3{
+    color: white;
+}
 .style_inputs input{
     font-weight: bold;
     border-radius: 25px;

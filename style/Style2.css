@@ -1,0 +1,29 @@
+body{
+    background-color: #db1515;
+    margin: 0cm;
+}
+
+.mostrar_usuario{
+    background-color:#f2abab;
+    border-radius: 2vw;
+    place-content: center;
+}
+
+.info{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.barra{
+    color: rgb(0, 0, 0);
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.btn{
+    font-size:25px
+}

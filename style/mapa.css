@@ -1,0 +1,20 @@
+
+nav {
+    background-color: #f2abab;
+}
+
+.map{
+    width: 100%;
+    height: 84.7vh;
+}
+
+.img{
+    height: 40px;   
+}
+.img2{
+    height: 30px; 
+    width: 40px;
+}
+.busqueda{
+    font-size: larger;
+}

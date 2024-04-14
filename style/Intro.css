@@ -52,3 +52,9 @@ body{
 .warning p{
     color: red;
 }
+
+.btn_ingresar{
+    color: white;
+    background-color: rgba(240, 248, 255, 0);
+    border-color: rgba(245, 245, 220, 0);
+}

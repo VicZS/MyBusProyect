@@ -9,7 +9,7 @@ nav {
 }
 
 .img{
-    height: 40px;   
+    max-block-size: 40px; 
 }
 .img2{
     height: 30px; 
@@ -18,3 +18,68 @@ nav {
 .busqueda{
     font-size:medium;
 }
+
+.img3{
+    max-block-size: 60px;
+    height: auto; 
+}
+
+.img4{
+    max-block-size: 100px;
+    height: auto; 
+}
+
+.img5{
+  max-inline-size: 100px;
+  align-self: center;
+  
+}
+
+.puntuacion {
+    width: 100%;
+  }
+  
+  .fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .categoria {
+    flex: 1;
+  }
+  
+  .estrellas {
+    flex: 2;
+  }
+  
+  .star {
+    font-size: 24px;
+  }
+  
+  .ok{
+    color: gold;
+  }
+
+  .nok{
+    color: rgba(255, 217, 0, 0);
+  }
+
+  .card{
+    border-color:#dfdfdf00 ;
+  }
+
+  .cuadro{
+    background-color: #ceecf7;
+    border-radius: 4vw;
+  }
+
+  a{
+    text-decoration: none;
+    
+  }
+
+  .card-body{
+    background-color: #7296a4;
+    border-radius: 3vw;
+  }

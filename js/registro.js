@@ -34,7 +34,7 @@ form.addEventListener('submit', async (e) => {
         const userCredential = await firebase.auth().createUserWithEmailAndPassword(email, password);
         console.log(userCredential);
         // Si se crea el usuario correctamente, puedes redirigirlo a otra página o mostrar un mensaje de éxito
-        window.location.href = "../exito.html";
+        window.location.href = "../Iniciar_Sesion_Email.html";
     } catch (error) {
         // Maneja el error, por ejemplo, si el correo electrónico ya está en uso
         console.error(error.message);

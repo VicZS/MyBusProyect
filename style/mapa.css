@@ -83,3 +83,14 @@ nav {
     background-color: #7296a4;
     border-radius: 3vw;
   }
+
+  .contenedor_mapa {
+    position: relative; /* Añade posición relativa al contenedor */
+    overflow: hidden; /* Evita que el mapa se salga del contenedor */
+  }
+  
+  #mi_mapa {
+    width: 100%; /* Ajusta el ancho del mapa al 100% del contenedor */
+    height: 84.7vh; /* Ajusta la altura del mapa al 100% del contenedor */
+  }
+  

@@ -1,0 +1,65 @@
+
+body{
+    background-color: #cddee5;
+}
+
+nav {
+    background-color: #efefef;
+}
+
+.img{
+    max-block-size: 40px; 
+}
+.img2{
+    height: 30px; 
+    width: 40px;
+}
+.card {
+    border-radius: 20px;
+    background-color: white;
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.btn {
+    border-radius: 20px;
+}
+
+.card-header img {
+    width: 5rem; /* Ajusta el ancho de la imagen */
+    height: 5rem; /* Ajusta la altura de la imagen */
+    max-width: 100%; /* Mantiene la proporción de aspecto */
+}
+
+.puntuacion {
+    width: 100%;
+  }
+  
+  .fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .categoria {
+    flex: 1;
+  }
+  
+  .estrellas {
+    flex: 2;
+  }
+  
+  .star {
+    font-size: 50px;
+  }
+  
+  .ok{
+    color: gold;
+  }

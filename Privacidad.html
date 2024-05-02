@@ -52,36 +52,36 @@
                         <tr>
                             <td><label for="msgTexto">Mensajes de Texto.</label></td>
                             <td>
-                                <label class="switchBtn">
-                                <input type="checkbox" onchange="changeText()">
-                                <div class="slide round">On</div>
+                                <label class="switchBtn1 switchBtn">
+                                <input type="checkbox" onchange="changeText1()">
+                                <div class="slide slide1 round">On</div>
                                 </label>
                             </td>
                         </tr>
                         <tr>
                             <td><label for="msgTexto">Correo electrónico.</label></td>
                             <td>
-                                <label class="switchBtn">
-                                <input type="checkbox" onchange="changeText()">
-                                <div class="slide round">On</div>
+                                <label class="switchBtn2 switchBtn">
+                                <input type="checkbox" onchange="changeText2()">
+                                <div class="slide slide2 round">On</div>
                                 </label>
                             </td>
                         </tr>
                         <tr>
                             <td><label for="msgTexto">Notificaciones.</label></td>
                             <td>
-                                <label class="switchBtn">
-                                <input type="checkbox" onchange="changeText()">
-                                <div class="slide round">On</div>
+                                <label class="switchBtn3 switchBtn">
+                                <input type="checkbox" onchange="changeText3()">
+                                <div class="slide slide3 round">On</div>
                                 </label>
                             </td>
                         </tr>
                         <tr>
                             <td><label for="msgTexto">Acceder a tu ubicación. </label></td>
                             <td>
-                                <label class="switchBtn">
-                                <input type="checkbox" onchange="changeText()">
-                                <div class="slide round">On</div>
+                                <label class="switchBtn4 switchBtn">
+                                <input type="checkbox" onchange="changeText4()">
+                                <div class="slide slide4 round">On</div>
                                 </label>
                             </td>
                         </tr>
@@ -93,9 +93,39 @@
     </div>
     
     <script>
-        function changeText() {
-            var switchBtn = document.querySelector(".switchBtn input");
-            var slide = document.querySelector(".slide");
+        function changeText1() {
+            var switchBtn = document.querySelector(".switchBtn1 input");
+            var slide = document.querySelector(".slide1");
+            if (switchBtn.checked) {
+                slide.innerText = "Off";
+            } else {
+                slide.innerText = "On";
+            }
+        }
+
+        function changeText2() {
+            var switchBtn = document.querySelector(".switchBtn2 input");
+            var slide = document.querySelector(".slide2");
+            if (switchBtn.checked) {
+                slide.innerText = "Off";
+            } else {
+                slide.innerText = "On";
+            }
+        }
+
+        function changeText3() {
+            var switchBtn = document.querySelector(".switchBtn3 input");
+            var slide = document.querySelector(".slide3");
+            if (switchBtn.checked) {
+                slide.innerText = "Off";
+            } else {
+                slide.innerText = "On";
+            }
+        }
+
+        function changeText4() {
+            var switchBtn = document.querySelector(".switchBtn4 input");
+            var slide = document.querySelector(".slide4");
             if (switchBtn.checked) {
                 slide.innerText = "Off";
             } else {

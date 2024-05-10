@@ -1,0 +1,30 @@
+body{
+    color: #263b49;
+}
+
+nav {
+    background-color: #efefef;
+}
+
+.img{
+    max-block-size: 40px; 
+}
+.img2{
+    height: 30px; 
+    width: 40px;
+}
+
+.img3{
+    max-block-size: 90px;
+    height: auto; 
+}
+
+.card {
+    border-color: #dfdfdf00;
+}
+
+.card-body {
+    background: rgb(114, 150, 164);
+    background: radial-gradient(circle, rgba(114, 150, 164, 1) 0%, rgba(138, 175, 198, 1) 100%);
+    border-radius: 3vw;
+}

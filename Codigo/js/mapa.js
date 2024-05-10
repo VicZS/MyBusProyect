@@ -30,6 +30,7 @@ let routingControl = null;
 function buscarRuta() {
     const nombreRutaPasado = document.getElementById("input_ruta").value;
     var nombreRuta = nombreRutaPasado.replace(/\s+/g, '').toLowerCase();
+    alert(nombreRuta);
     if (nombreRuta.trim() === "") {
         alert("Por favor ingrese un nombre de ruta.");
         return;

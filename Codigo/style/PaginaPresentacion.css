@@ -1,0 +1,17 @@
+body{
+    background: rgb(242,247,248);
+    background: radial-gradient(circle, rgba(242,247,248,1) 0%, rgba(216,230,254,1) 100%);
+}
+
+.align-self-center img {
+    max-width: 3em;
+    height: auto; 
+}
+
+.img_grande{
+    width: 100%
+}
+
+.nav-link, h2{
+    color: #7296a4;
+}

@@ -30,6 +30,7 @@ form.addEventListener('submit', async (e) => {
         const user = userCredential.user;
         // Guarda el UID del cliente en sessionStorage
         sessionStorage.setItem('uid', user.uid);
+        sessionStorage.setItem('email', email);
         // Puedes redirigirlo a otra página si lo deseas
         window.location.href = "../Menu.html";
     } catch (error) {

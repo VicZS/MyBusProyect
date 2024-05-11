@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 body{
     background: rgb(242,247,248);
     background: radial-gradient(circle, rgba(242,247,248,1) 0%, rgba(216,230,254,1) 100%);
+    font-family: 'Comfortaa';
 }
 
 .align-self-center img {
@@ -9,9 +12,10 @@ body{
 }
 
 .img_grande{
-    height: 100%
+    height: 100%;
 }
 
 .nav-link, h2{
     color: #657f8a;
 }
+

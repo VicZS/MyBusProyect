@@ -1,0 +1,21 @@
+
+nav {
+    background-color: #efefef;
+}
+
+.img{
+    max-block-size: 40px; 
+}
+.img2{
+    height: 30px; 
+    width: 40px;
+}
+
+
+
+button{
+    color: #295f75;
+    background-color: #f0f8ff00;
+    border: 3px solid #95becc;
+    border-radius: 2vw;
+}

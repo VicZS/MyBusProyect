@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body{
+    background-color: #cddee5;
+    color: #e6f0f2;
+    font-family: 'Comfortaa';
+}
+
+.mostrar_usuario{
+    background-color:#7296a4;
+    border-radius: 2vw;
+    place-content: center;
+}
+
+.info{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.barra{
+    color: rgb(0, 0, 0);
+}
+
+a{
+    text-decoration: none;
+    color: #e6f0f2;
+}
+
+.btn{
+    color: #e6f0f2;
+    font-size:25px
+}

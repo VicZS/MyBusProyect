@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body{
+    font-family: 'Comfortaa';
+    color: #7296a4;
+    background-color: #cddee5;
+}
+
+.style_inputs input{
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.codigo input{
+    font-weight: bold;
+}
+
+.olvido_contraseña a{
+    color: #7296a4;
+    text-decoration: none;
+    font-size: small;
+}
+
+.crear_cuenta a{
+    color: #7296a4; 
+    text-decoration: none;
+    font-size: larger;
+}
+
+.warning p{
+    color: red;
+}
+
+.btn_ingresar{
+    color: #7296a4;
+    background-color: rgba(240, 248, 255, 0);
+    border-color: rgba(245, 245, 220, 0);
+}
+
+.formulario_inicio{
+    background: rgb(240,246,255);
+    background: radial-gradient(circle, rgba(240,246,255,1) 0%, rgb(243, 247, 253) 100%);
+    display:inline-block;
+    border-radius: 2vw;
+    border: 3px solid #c4dbe3;
+
+}
+
+.container{
+    min-height: 100%;
+}
+
+input{
+    border: 3px solid #95becc;
+}

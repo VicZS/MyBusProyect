@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
+body{
+    font-family: 'Comfortaa';
+    color: #7296a4;
+    background-color: #cddee5;
+}
 
 nav {
     background-color: #efefef;
@@ -11,7 +18,10 @@ nav {
     width: 40px;
 }
 
-
+.style_inputs input{
+    font-weight: bold;
+    border-radius: 25px;
+}
 
 button{
     color: #295f75;

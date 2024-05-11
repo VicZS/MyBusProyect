@@ -34,6 +34,7 @@ function actualizarNombreUsuario() {
         // Actualizar el nombre de usuario en la base de datos Firebase
         firebase.database().ref('Usuarios/' + uid).update({ nombre: nuevoNombre })
             .then(() => {
+                alert('Nombre de usuario actualizado correctamente');
                 console.log('Nombre de usuario actualizado correctamente');
                 // Puedes agregar aquí cualquier lógica adicional después de actualizar el nombre
             })
@@ -42,6 +43,7 @@ function actualizarNombreUsuario() {
             });
     } else {
         console.error('El nuevo nombre de usuario no puede estar vacío');
+        alert('Falta el Nombre de Usuario');
     }
 }
 

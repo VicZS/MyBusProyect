@@ -25,8 +25,12 @@ form.addEventListener('submit', async (e) => {
 
     try {
         // Intenta iniciar sesión con el correo electrónico y la contraseña proporcionados
-        await firebase.auth().signInWithEmailAndPassword(email, password);
-        // Si el usuario se autentica correctamente, puedes redirigirlo a otra página o mostrar un mensaje de éxito
+        const userCredential = await firebase.auth().signInWithEmailAndPassword(email, password);
+        // Si el usuario se autentica correctamente
+        const user = userCredential.user;
+        // Guarda el UID del cliente en sessionStorage
+        sessionStorage.setItem('uid', user.uid);
+        // Puedes redirigirlo a otra página si lo deseas
         window.location.href = "../Menu.html";
     } catch (error) {
         // Maneja el error, mostrando un mensaje adecuado según el tipo de error

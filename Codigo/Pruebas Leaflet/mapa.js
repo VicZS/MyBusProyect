@@ -2,8 +2,9 @@
 // Inicialización del mapa
 let map = L.map('mi_mapa').setView([19.00432,-98.20308], 19);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
 }).addTo(map);
 
 // Inicialización de Firebase
@@ -59,7 +60,15 @@ function buscarRuta() {
         coordenadasCamino = coordenadasCamino.map(coord => [coord[1], coord[0]]);
 
         // Trazar la línea del camino
-        const polyline = L.polyline(coordenadasCamino, { color: 'blue' }).addTo(map);
+        const polyline = L.polyline(coordenadasCamino, { color: 'yellow',opacity: 0.4, weight: 5 }).addTo(map);
+
+        // Define el icono personalizado
+        const myIcon = L.icon({
+            iconUrl: './img/pin_parada_bus.png',
+            iconSize: [60, 60], // tamaño del icono
+            iconAnchor: [30, 45], // punto de anclaje del icono, correspondiente a su base
+            popupAnchor: [0, -38] // punto donde se abrirá el popup con respecto al icono
+        });
 
         // Iterar sobre las paradas
         const paradas = rutaData.Paradas;
@@ -71,7 +80,7 @@ function buscarRuta() {
             const nombre = paradaData.nombre;
             const numeroParada = paradaData.numparada;
 
-            const marker = L.marker([latitud, longitud]).addTo(map);
+            const marker = L.marker([latitud, longitud], { icon: myIcon }).addTo(map);
             marker.bindPopup(`<b>${nombre}</b><br>Número de Parada: ${numeroParada}`).openPopup();
         });
     }).catch((error) => {

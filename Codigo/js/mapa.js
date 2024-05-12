@@ -2,8 +2,9 @@
 // Inicialización del mapa
 let map = L.map('mi_mapa').setView([19.00432,-98.20308], 19);
 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+L.tileLayer('http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}',{
+    maxZoom: 20,
+    subdomains:['mt0','mt1','mt2','mt3']
 }).addTo(map);
 
 // Inicialización de Firebase
@@ -30,7 +31,7 @@ let routingControl = null;
 function buscarRuta() {
     const nombreRutaPasado = document.getElementById("input_ruta").value;
     var nombreRuta = nombreRutaPasado.replace(/\s+/g, '').toLowerCase();
-    alert(nombreRuta);
+    
     if (nombreRuta.trim() === "") {
         alert("Por favor ingrese un nombre de ruta.");
         return;
@@ -49,53 +50,42 @@ function buscarRuta() {
     });
 
     // Acceso a la base de datos de Firebase para la ruta especificada
-    const paradasRef = database.ref('Paradas/' + nombreRuta);
+    const rutaRef = database.ref('Rutas/' + nombreRuta);
     
-    paradasRef.once('value').then((snapshot) => {
-        const coordenadas = [];
-        snapshot.forEach((childSnapshot) => {
-            const paradaData = childSnapshot.val();
-            const latitud = paradaData.latitud;
-            const longitud = paradaData.longitud;
-            const nombre = paradaData.nombre;
+    rutaRef.once('value').then((snapshot) => {
+        const rutaData = snapshot.val();
+        let coordenadasCamino = rutaData.Camino;
 
-            coordenadas.push([parseFloat(latitud).toFixed(7), parseFloat(longitud).toFixed(7)]);
+        // Corregir las coordenadas del camino (intercambiar longitud y latitud)
+        coordenadasCamino = coordenadasCamino.map(coord => [coord[1], coord[0]]);
 
-            console.log(paradaData);
-            console.log(latitud);
+        // Trazar la línea del camino
+        const polyline = L.polyline(coordenadasCamino, { color: 'yellow',opacity: 0.4, weight: 5 }).addTo(map);
 
-            L.marker([parseFloat(latitud).toFixed(7), parseFloat(longitud).toFixed(7)]).addTo(map).bindPopup(nombre);
+        // Define el icono personalizado
+        const myIcon = L.icon({
+            iconUrl: './img/pin_parada_bus.png',
+            iconSize: [60, 60], // tamaño del icono
+            iconAnchor: [30, 45], // punto de anclaje del icono, correspondiente a su base
+            popupAnchor: [0, -38] // punto donde se abrirá el popup con respecto al icono
         });
 
-        // Agregar la ruta
-        if (coordenadas.length > 1) {
-            routingControl = L.Routing.control({
-                waypoints: coordenadas.map(coord => L.latLng(coord[0], coord[1])),
-                routeWhileDragging: true,
-                show: false,
-                showInstructions: false,
-                routeDrag: false,
-                addWaypoints: false,
-                createMarker: function(i, waypoint, n) { // Función para crear marcadores
-                    return L.marker(waypoint.latLng, {
-                        draggable: false, // Deshabilitar el arrastre de marcadores
-                        icon: L.icon({ // Icono personalizado para los marcadores
-                            iconUrl: '../img/punto-final.png',
-                            iconSize: [1, 1],
-                            iconAnchor: [1, 1],
-                            popupAnchor: [0, -32]
-                        }),
-                        waypointIndex: i // Índice del marcador en la lista de waypoints
-                    });
-                },
-                lineOptions: {
-                    styles: [{ color: 'blue', opacity: 0.4, weight: 5 }]
-                }
-            }).addTo(map);
-        } else {
-            console.error("No hay suficientes coordenadas para trazar la ruta.");
-        }
+        // Iterar sobre las paradas
+        const paradas = rutaData.Paradas;
+        Object.keys(paradas).forEach((key) => {
+            const paradaData = paradas[key];
+            const coordenadas = paradaData.coordenadas.split(",");
+            const latitud = parseFloat(coordenadas[1].trim()).toFixed(7);
+            const longitud = parseFloat(coordenadas[0].trim()).toFixed(7);
+            const nombre = paradaData.nombre;
+            const numeroParada = paradaData.numparada;
+
+            const marker = L.marker([latitud, longitud], { icon: myIcon }).addTo(map);
+            marker.bindPopup(`<b>${nombre}</b><br>Número de Parada: ${numeroParada}`).openPopup();
+        });
     }).catch((error) => {
         console.error("Error al acceder a la base de datos de Firebase:", error);
     });
 }
+
+

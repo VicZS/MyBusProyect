@@ -1,0 +1,33 @@
+body{
+  background-color: #a2b8c1;
+}
+nav {
+    background-color: #efefef;
+}
+
+.img{
+    max-block-size: 40px; 
+}
+.img2{
+    height: 30px; 
+    width: 40px;
+}
+.contenedor_mapa {
+  position: relative;
+  /* Añade posición relativa al contenedor */
+  overflow: hidden;
+  /* Evita que el mapa se salga del contenedor */
+}
+
+#mi_mapa {
+  width: 100%;
+  /* Ajusta el ancho del mapa al 100% del contenedor */
+  height: 72vh;
+  /* Ajusta la altura del mapa al 100% del contenedor */
+}
+
+.btnIr{
+  background-color: #7296a4;
+  color: #e6f0f2;
+  font-size:20px
+}

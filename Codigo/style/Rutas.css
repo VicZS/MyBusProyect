@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap');
+
 body{
     color: #263b49;
+    font-family: 'Comfortaa';
 }
 
 nav {
